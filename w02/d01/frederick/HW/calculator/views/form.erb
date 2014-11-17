@@ -1,0 +1,23 @@
+<form action="/" method="POST">
+  <p>
+    <label for="first_number">First Number</label>
+    <input type="text" name="first_number" id="first_number">
+  </p>
+  <p>
+    <label>Operator</label>
+    <select name="operator">
+      <option value="plus" id="operator">plus</option>
+      <option value="minus" id="operator">minus</option>
+      <option value="multiple" id="operator">multiple</option>
+      <option value="divide" id="operator">divide</option>
+     </select> 
+  </p>
+  <p>
+    <label for="second_number">Second Number</label>
+    <input type="text" name="second_number" id="second_number">
+  </p>
+  <input type="submit" value="Calculate!">
+
+  <h1><%= @result %></h1>
+
+</form>
