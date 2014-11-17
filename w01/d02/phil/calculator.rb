@@ -99,7 +99,7 @@ def convert_calc
   end
 end
  
-# response = menu
+response = menu
  
 # This process should continue until the user selects a quit option from the menu
 while response != 'q'
