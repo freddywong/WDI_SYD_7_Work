@@ -1,4 +1,8 @@
+<<<<<<< HEAD
  puts `clear`
+=======
+puts `clear`
+>>>>>>> 3c083aa55008438d4a47eb3c5bd7697fcffeef31
 
 require 'rainbow'
  
