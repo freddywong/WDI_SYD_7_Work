@@ -1,14 +1,30 @@
 require "sinatra"
 require "sinatra/reloader"
+require "pry"
 
 get '/' do
-	
+	binding.pry
   erb :home, layout: :layout
 end
 
 get '/students/:name' do
-  @student_name = params[:name].to_s
-  @ga_logo = "/ga-logo.png"
+	# params = {
+	# 	:name => "barney"
+	# }
+	# ON A GET REQUEST
+		# The first place that Ruby starts creating the params hash from is the URL
+		# This is based around URL matching
+		# In this case...  /students/ is the base URL 
+		# Anything after that is assigned as a value to the hash - the key comes from whatever starts with the colon
+
+	#My notes:
+	#1. The params hash is created right after the get(or post request).
+	#2. It gets the key from the URL and puts it into the params hash
+	#3. It then gets the value from the URL	and puts it into the params hashs
+
+
+	@student_name = params[:name].to_s
+	@ga_logo = "/ga-logo.png"
 	case @student_name
 	when "barney"
 
@@ -59,6 +75,13 @@ end
 
 post '/thank_you' do
 	@ga_logo = "/ga-logo.png"
+
+	# params = {
+	# 	:name => "",
+	# 	:email_address => "",
+	# 	:subject => ""
+	# }
+
 	@name = params[:name]
 	@email_address = params[:email_address]
 	@subject = params[:subject]
