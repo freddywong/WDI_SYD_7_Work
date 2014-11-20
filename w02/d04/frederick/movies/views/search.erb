@@ -1,0 +1,13 @@
+<% if @movies %> 
+
+
+<% @movies.each do |movie| %>
+<ul>
+  <li>
+    <a href="/movies/<%= movie["imdbID"].gsub(" ", "+") %>"><%= movie["Title"] %></a>
+  </li>
+</ul>      
+<% end %>
+
+<% end %>  
+

@@ -1,0 +1,50 @@
+
+
+    <% if @movie %> 
+    <h2>
+      <a href="https://www.google.com/search?q=<%= @movie["Title"] %>"><%= @movie["Title"] %></a>
+
+    </h2>
+    <img src="<%= @movie["Poster"] %>"/>
+  </div>
+
+  <hr>
+
+  <div id="details">  
+    <ul>
+      <li>Year: <%= @movie["Year"] %></li>
+      <li>Rated: <%= @movie["Rated"] %></li>
+      <li>Released: <%= @movie["Released"] %></li>
+      <li>Runtime: <%= @movie["Runtime"] %></li>
+      <li>Genre: <%= @movie["Genre"] %></li>
+      <li>Director: <%= @movie["Director"] %></li>
+      <li>Writer: <%= @movie["Writer"] %></li>
+      <li>Actors: <%= @movie["Actors"] %></li>
+      <li>Language: <%= @movie["Language"] %></li>
+      <li>Country: <%= @movie["Country"] %></li>
+      <li>Awards: <%= @movie["Awards"] %></li>
+      <li>Metascore: <%= @movie["Metascore"] %></li>
+      <li>IMDb Rating: <%= @movie["imdbRating"] %></li>
+      <li>IMDb Stars: <% @imdb_rating.times do  %>
+        <img src="/star.png"/>
+        <% end %>
+      </li>
+      <li>Tomato Rating: <%= @movie["tomatoRating"] %></li>
+      <li>Tomato Stars: <% @tomato_rating.times do %>
+        <img src="/tomato.png"/>
+        <% end %>
+      </li>
+      <li>IMDb Votes: <%= @movie["imdbVotes"] %></li>
+    </ul>
+
+    <h3>Related Movies</h3>
+
+    <ul>
+      <% @related_movies.each do |related_movie| %>
+      <li>
+        <a href="/movies/<%= related_movie["imdbID"].gsub(" ","+") %>"><%= related_movie["Title"] %> (<%= related_movie["Year"] %>)</a>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
