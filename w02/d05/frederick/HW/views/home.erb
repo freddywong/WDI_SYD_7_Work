@@ -1,0 +1,9 @@
+    <ul>
+      <% @all_links.each do |link| %>
+      <li>
+        <a href="<%= link["url"] %>"><%= link["name"] %></a>
+      </li>
+      <% end %>
+    </ul>
+
+<a href="/tasks/new">add link</a>
