@@ -1,0 +1,7 @@
+<ul>
+<% @posts.each do |post| %>
+  <a href="<%= "/post/#{post["id"]}" %>">
+  <li><%= "(Post no. #{post["id"]}) #{post["title"]}" %></li>
+  </a>
+<% end %>
+</ul>

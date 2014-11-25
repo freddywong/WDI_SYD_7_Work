@@ -1,0 +1,24 @@
+<p>
+  <a href="/posts/new">Add Post</a>
+</p>
+
+<ul>
+<% @posts.each do |post| %>
+  <li style="line-height: 3em;">
+    <strong><a href="/post/<%= post["id"] %>"><%= post["title"] %></a></strong>
+    <% if post["published_at"] %>
+    (Post published on: <%= post["published_at"] %>)
+    <% end %>
+
+    <% if post["authors_first_name"] %>
+    <em>Written by: <%= post["authors_first_name"] + " " + post["authors_last_name"] %></em>
+    <% end %>
+
+    <span style="background: #bbb; padding: 10px;">(Actions: <a href="/posts/<%= post["id"] %>/edit">Edit</a> |
+    <form action="/posts/<%= post["id"] %>" method="POST" style="display: inline;">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Destroy">)
+    </form></span>
+  </li>
+<% end %>
+</ul>

@@ -1,0 +1,31 @@
+<form action="/authors/<%= @author["id"] %>" method="POST">
+  <input type="hidden" name="_method" value="PUT">
+
+  <p>
+    <label for="first_name">First Name</label><br>
+    <input type="text" name="first_name" id="first_name" value="<%= @author["first_name"] %>">
+  </p>
+  <p>
+    <label for="last_name">Last Name</label><br>
+    <input type="text" name="last_name" id="last_name" value="<%= @author["last_name"] %>">
+  </p>
+  <p>
+    <label for="bio">Bio</label><br>
+    <input type="text" name="bio" id="bio" value="<%= @author["bio"] %>">
+  </p>
+  <p>
+    <label for="twitter">Twitter</label><br>
+    <input type="text" name="twitter" id="twitter" value="<%= @author["twitter"] %>">
+  </p>
+  <p>
+    <label for="website">Website</label><br>
+    <input type="text" name="website" id="website" value="<%= @author["website"] %>">
+  </p>
+  <p>
+    <label for="google_plus">Google Plus</label><br>
+    <input type="text" name="google_plus" id="google_plus" value="<%= @author["google_plus"] %>">
+  </p>
+  <p>
+    <input type="submit" value="Update Author">
+  </p>
+</form>
