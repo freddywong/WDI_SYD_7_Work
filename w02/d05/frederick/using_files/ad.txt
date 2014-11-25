@@ -1,0 +1,5 @@
+Number of KMs: 200000
+Door type: normal
+Sunroof: no
+Engine type: v12
+Asking price: 30000000

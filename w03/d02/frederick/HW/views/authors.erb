@@ -1,0 +1,20 @@
+<p>
+  <a href="/authors/new">Add Author</a>
+</p>
+
+<ul>
+<% @authors.each do |author| %>
+  <li style="line-height: 3em;">
+    <%= author["first_name"] + " " + author["last_name"] %>
+	<%= author["bio"] + " " + author["twitter"] %>
+	<%= author["website"] + " " + author["google_plus"] %>
+    <span style="background: #bbb; padding: 10px;">(Actions: <a href="/authors/<%= author["id"] %>/edit">Edit</a> |
+    <form action="/authors/<%= author["id"] %>" method="POST" style="display: inline;">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Destroy">)
+    </form></span>
+  </li>
+<% end %>
+</ul>
+
+
