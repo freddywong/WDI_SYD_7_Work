@@ -1,0 +1,15 @@
+<h2><%= @artist.first_name + " " + @artist.last_name %></h2>
+<p><%= @artist.nationality %></p>
+<p><%= @artist.period %></p>
+<img src="<%= @artist.image %>"/>
+<p><%= @artist.date_of_birth %></p>
+
+<h3>Related Paintings</h3>
+<% @artist.paintings.each do |painting| %>
+<ul>
+	<li><%= painting.title %></li>
+</ul>
+<% end %>
+
+
+<%= link_to 'All Artists', artists_path %>

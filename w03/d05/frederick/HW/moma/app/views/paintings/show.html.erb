@@ -1,0 +1,8 @@
+<h2><%= @painting.title + " " + @painting.year %></h2>
+<p><%= @painting.medium %></p>
+<p><%= @painting.style %></p>
+<!-- <p><%= @painting.artist_id %></p> -->
+<img src="<%= @painting.image %>"/>
+
+
+<%= link_to 'All Paintings', paintings_path %>

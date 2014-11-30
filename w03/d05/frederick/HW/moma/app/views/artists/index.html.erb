@@ -1,0 +1,24 @@
+<%= link_to 'Back', root_path %>
+
+<h1>Listing Artists</h1>
+ 
+<table>
+  <tr>
+    <th>Artist</th>
+    <th>Period</th>
+  </tr>
+ 
+  <% @artists.each do |artist| %>
+    <tr>
+      <td><%= artist.first_name %> <%= artist.last_name %></td>
+      <td><%= artist.period %></td>
+      <td><%= link_to 'Show', artist_path(artist) %></td>
+      <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
+       <td><%= link_to 'Destroy', artist_path(artist),
+                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New Artist', new_artist_path %>
+

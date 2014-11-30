@@ -1,0 +1,31 @@
+<%= form_for @painting do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :year %><br>
+    <%= f.text_field :year %>
+  </p>
+  <p>
+    <%= f.label :medium %><br>
+    <%= f.text_field :medium %>
+  </p>
+  <p>
+    <%= f.label :style %><br>
+    <%= f.text_field :style %>
+  </p>
+  <p>
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+  </p>
+    <p>
+<%= f.collection_select(:artist_id, Artist.all, :id, :first_name ) %>
+  </p>
+  
+
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

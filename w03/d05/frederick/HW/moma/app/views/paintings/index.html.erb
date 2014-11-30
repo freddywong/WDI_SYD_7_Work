@@ -1,0 +1,23 @@
+<%= link_to 'Back', root_path %>
+
+<h1>Listing Paintings</h1>
+ 
+<table>
+  <tr>
+    <th>Painting</th>
+    <th>Year</th>
+  </tr>
+ 
+  <% @paintings.each do |painting| %>
+    <tr>
+      <td><%= painting.title %></td>
+      <td><%= painting.year %></td>
+      <td><%= link_to 'Show', painting_path(painting) %></td>
+      <td><%= link_to 'Edit', edit_painting_path(painting) %></td>
+     <td><%= link_to 'Destroy', painting_path(painting),
+                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New Painting', new_painting_path %>
