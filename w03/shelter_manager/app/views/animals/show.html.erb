@@ -1,0 +1,15 @@
+<h1><%= @animal.name %></h1>
+
+<ul>
+	<li><strong>Species:</strong><%= @animal.species %></li>
+	<li><strong>Breed:</strong><%= @animal.breed %></li>
+	<li><strong>Arrival Time:</strong><%= @animal.arrival_time %></li>
+	<li><strong>Departure Time:</strong><%= @animal.departure_time %></li>
+	<li><strong>Sex:</strong><%= @animal.sex %></li>
+	<li><strong>Age:</strong><%= @animal.age %></li>
+	
+</ul>
+
+<%= link_to 'Back', animals_path %>
+<%= link_to 'Edit', edit_animal_path(@animal) %>
+

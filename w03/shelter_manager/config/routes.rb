@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :animals, only: [:index]
+  resources :animals, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   # get 'animals/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
